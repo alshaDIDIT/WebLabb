@@ -1,6 +1,6 @@
 package se.niyo;
 
-import fileutils.FileReader;
+import se.niyo.fileutils.Filereader;
 
 import java.io.*;
 import java.net.ServerSocket;
@@ -43,7 +43,7 @@ public class Server {
             var output = new PrintWriter(soc.getOutputStream());
 
             File file = new File("Web " + File.separator + url); //"src//rec//index.html"
-            byte[] page = FileReader.readFromFile(file);
+            byte[] page = Filereader.readFromFile(file);
 
             String contentType = Files.probeContentType(file.toPath());
 
